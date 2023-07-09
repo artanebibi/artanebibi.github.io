@@ -55,9 +55,9 @@
 
 body {
     font-family: "Space Mono", sans-serif;
-    /*animation: background-animation 20s linear infinite alternate;*/
-    /*background: linear-gradient(to right, hsla(171, 15%, 45%, 1), lightgoldenrodyellow, lightcyan);*/
-    background: linear-gradient(to right, lightgoldenrodyellow, lightcyan);
+    animation: background-animation 20s linear infinite alternate;
+    background: linear-gradient(to right, hsla(171, 15%, 45%, 1), lightgoldenrodyellow, lightcyan);
+    /*background: linear-gradient(to right, lightgoldenrodyellow, lightcyan);*/
     background-size: 400% auto;
 }
 
