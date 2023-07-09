@@ -1,0 +1,598 @@
+/*!*__________________________________________________________________________________________________________________*!*/
+
+* {
+    color: hsla(172, 95%, 18%, 1);
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'against';
+    src: url('fonts/against regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'requema';
+    src: url('fonts/REQUEMA.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'romalano';
+    src: url('fonts/Romelano_PERSONAL_USE_ONLY.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'velodrama';
+    src: url('fonts/VelodromaBasic-Wide.otf') format('truetype');
+
+}
+
+@font-face {
+    font-family: 'newspaper';
+    src: url("fonts/OldNewspaperTypes.ttf") format('truetype');
+}
+
+
+@keyframes background-animation {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/*!*__________________________________________________________________________________________________________________*!*/
+
+
+body {
+    font-family: "Space Mono", sans-serif;
+    /*animation: background-animation 20s linear infinite alternate;*/
+    /*background: linear-gradient(to right, hsla(171, 15%, 45%, 1), lightgoldenrodyellow, lightcyan);*/
+    background: linear-gradient(to right, lightgoldenrodyellow, lightcyan);
+    background-size: 400% auto;
+}
+
+
+
+/* NAVBAR */
+
+header input {
+    display: none;
+}
+
+header {
+    font-family: 'velodrama', sans-serif;
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+    margin: 15px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    background: hsla(2, 10%, 100%, 0.5);
+    backdrop-filter: blur(6px);
+    border-radius: .9vw;
+    height: 70px;
+
+}
+
+
+header ul {
+    float: right;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    list-style: none;
+}
+
+header li {
+    margin: 4px;
+}
+
+header li a {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: hsla(171, 15%, 35%, 1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20vw;
+}
+
+
+@media (max-width: 1050px) {
+
+    .topnav {
+        /*background: red;*/
+        display: none; /* Hide the dropdown menu by default */
+        position: absolute;
+        right: 10px;
+        top: 60px;
+        background: hsla(2, 10%, 100%, 0.5);
+        /*backdrop-filter: blur(16px) !important;*/
+        border-radius: 1em;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul li a {
+        background: hsla(2, 10%, 100%, 0.5);
+        backdrop-filter: blur(6px) !important;
+    }
+
+    .topnav li a {
+        background: hsla(2, 10%, 100%, 0.5);
+        backdrop-filter: blur(6px);
+        margin-right: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+
+    }
+
+    .show {
+        display: block;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    #checkbox {
+        display: none;
+    }
+
+    label {
+        float: right;
+        margin: 20px;
+    }
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition-duration: .5s;
+    }
+
+    /*the button when responsive*/
+    .bars {
+        width: 100%;
+        height: 4px;
+        background-color: hsla(172, 95%, 18%, 1);
+        border-radius: 4px;
+    }
+
+    #bar2 {
+        transition-duration: .8s;
+    }
+
+    #bar1, #bar3 {
+        width: 70%;
+    }
+
+    #checkbox:checked + .toggle .bars {
+        position: absolute;
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked + .toggle #bar2 {
+        transform: scaleX(0);
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked + .toggle #bar1 {
+        width: 100%;
+        transform: rotate(45deg);
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked + .toggle #bar3 {
+        width: 100%;
+        transform: rotate(-45deg);
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked + .toggle {
+        transition-duration: .5s;
+        transform: rotate(180deg);
+    }
+}
+
+header section {
+    display: inline-block;
+    color: hsla(171, 15%, 35%, 1);;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2rem;
+    font-size: clamp(18px, 10px + 1vw, 28px);
+}
+/* /NAVBAR */
+
+/* section */
+.Ss {
+    display: grid;
+    place-items: center;
+}
+
+.Ss article {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.Ss h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(3rem, 1rem + 5vw, 13rem);
+    font-weight: bold;
+}
+
+.Ss h3 {
+    padding: 10px;
+}
+
+/* /section */
+
+/* HOMEPAGE */
+.homepage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage div {
+    padding: 10px;
+}
+
+.homepage h3 {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.homepage img {
+    border-radius: 5.5vw;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 800px) {
+    .homepage {
+        display: grid;
+        grid-template-columns: 50% 30%;
+    }
+}
+
+@media (max-width: 1130px) {
+    .homepage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        text-align: center;
+    }
+}
+
+/* /HOMEPAGE */
+
+
+/* PART ABOUT ME*/
+
+#biography p {
+    width: 1600px;
+}
+
+#biography div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    line-height: 1.5rem;
+}
+
+#biography p {
+    margin: auto auto;
+    text-align: justify;
+}
+
+
+#biography h4 {
+    font-size: clamp(2rem, 0.8rem + 4vw, 7rem);
+}
+
+
+#biography div {
+    width: 60%;
+}
+
+::selection {
+    background-color: hsla(172, 95%, 18%, 1);
+    color: floralwhite;
+}
+
+.i1::after {
+    content: "Skopje, North Macedonia";
+    position: absolute;
+    margin-top: 385px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: gray;
+    color: floralwhite;
+    padding: 5px 10px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+}
+
+
+.i1:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (min-width: 900px) {
+    .quoteDiv {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+
+}
+
+/* / PART ABOUT ME*/
+
+
+/*!*_____________________________________________________SKILLS PORTFOLIO_______________________________________________*!*/
+
+.band {
+    width: 90%;
+    border-radius: 5vw;
+    max-width: 1240px;
+    margin: 150px auto;
+    display: grid;
+    grid-row: 2;
+    grid-gap: 2rem;
+}
+
+.band .item- {
+    padding: 80px;
+}
+
+@media (min-width: 800px) {
+    .band {
+        padding: 50px;
+        background: url("photos/img_4.png");
+    }
+}
+
+@media (min-width: 60em) {
+    .band {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.iholder a {
+    box-shadow: 0 2px 50px rgba(0, 0, 0, 0.61);
+}
+
+.iholder img:hover {
+    transform: translateY(-0.4em);
+}
+
+.card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+}
+
+.band div:hover {
+    box-shadow: 4px 6px 0px rgba(55, 22, 22, 0.67);
+    transform: translateY(-0.4em);
+}
+
+.band div:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+.band div {
+    transition: 0.2s;
+    transform: translateY(-0.10em);
+    box-shadow: 3px 3px 0px floralwhite;
+    border: 1px solid floralwhite;
+    background-color: white;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    padding: 5px;
+
+}
+
+.band article {
+    padding: 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.band h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.band p {
+    flex: 1;
+}
+
+.band span {
+    font-size: 19px;
+    font-weight: bolder;
+    color: slategrey;
+    letter-spacing: .05em;
+    margin: .5rem 0 0 0;
+}
+
+
+.item {
+    transition: box-shadow 9s ease;
+}
+
+.band div:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Darker color and larger size */
+}
+
+header a:hover {
+    box-shadow: 0 0 5px rgba(204, 204, 204, 0.8); /* Beiger color and larger size */
+
+}
+
+.thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (min-width: 1160px) {
+    .item-1 {
+        grid-column: 1 / span 2;
+    }
+
+    .item-4 {
+        grid-row: 2;
+        grid-column: 2 / span 2;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+
+@media (min-width: 800px) and (max-width: 1400px) {
+    .band {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    .item-1 {
+        grid-area: card1;
+    }
+
+    .item-2 {
+        grid-area: card2;
+    }
+
+    .item-3 {
+        grid-area: card3;
+    }
+
+    .item-4 {
+        grid-area: card4;
+    }
+
+    .item-5 {
+        grid-area: card5;
+    }
+
+    .item-6 {
+        grid-area: card6;
+    }
+
+    .band {
+        grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6";
+    }
+}
+
+/*!*_________________________________________________SKILLS PORTFOLIO_______________________________________________*!*/
+
+
+/*!*_____________________________________________________QUOTE______________________________________________________*!*/
+
+.cardd {
+    color: rgba(223, 248, 134, 0.38);
+    width: 190px;
+    height: 254px;
+    background: rgb(183, 226, 25, 12);
+    font-family: inherit;
+    position: relative;
+}
+
+.quote {
+    color: rgb(223, 248, 134);
+    padding-left: 30px;
+    position: relative;
+}
+
+.cardd-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(158, 196, 21);
+    padding: 35px;
+}
+
+.body-text {
+    font-size: 20px;
+    font-weight: 900;
+    padding: 60px 40px 0;
+    color: #465512;
+    position: absolute;
+    top: 2vw;
+    left: 1vw;
+}
+
+/*!*_____________________________________________________QUOTE______________________________________________________*!*/
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(171, 15%, 35%, 1);
+}
